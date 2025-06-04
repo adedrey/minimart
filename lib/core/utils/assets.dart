@@ -11,7 +11,11 @@ class _AssetsImages {
   _AssetsImages._();
 
 
+  final earphoneJPG = 'assets/images/earphone.jpg';
+  final iphone16PNG = 'assets/images/iphone16.png';
   final logoPNG = 'assets/images/logo.png';
+  final macbookJPG = 'assets/images/macbook.jpg';
+  final pixelPNG = 'assets/images/pixel.png';
 }
 
 class _AssetsSvg {
