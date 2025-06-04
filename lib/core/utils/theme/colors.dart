@@ -5,6 +5,7 @@ class AppColors {
   static const kColorBlack = Color(0xff000000);
   static const kColorGrey200 = Color(0xffE2E8F0);
   static const kColorWhite = Color(0xffffffff);
+  static const kColorScaffold = Color(0xffFBFBFB);
   static const kColorSurfaceVariant = Color(0xff49454F);
   static const kColorGrey400 = Color(0xff94A3B8);
   static const kColorGrey300 = Color(0xffCBD5E1);

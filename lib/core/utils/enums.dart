@@ -33,10 +33,9 @@ enum ToastStyle {
 
 enum Menu {
   home(label: 'Home', icon: 'assets/svg/home.svg'),
-  jobs(label: 'Jobs', icon: 'assets/svg/bulb.svg'),
-  messages(label: 'Messages', icon: 'assets/svg/notification-status.svg'),
-  connects(label: 'Connects', icon: 'assets/svg/connect.svg'),
-  settings(label: 'Settings', icon: 'assets/svg/setting.svg');
+  cart(label: 'Cart', icon: 'assets/svg/cart.svg'),
+  favorites(label: 'Favorites', icon: 'assets/svg/like.svg'),
+  profile(label: 'Profile', icon: 'assets/svg/profile.svg');
 
   const Menu({
     required this.label,

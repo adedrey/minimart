@@ -20,7 +20,7 @@ final lightTheme = ThemeData(
       statusBarIconBrightness: Brightness.light,
     ),
   ),
-  scaffoldBackgroundColor: AppColors.kColorWhite,
+  scaffoldBackgroundColor: AppColors.kColorScaffold,
   fontFamily: kFontFamily,
   colorScheme:
       const ColorScheme.light().copyWith(surfaceTint: Colors.transparent),
@@ -36,7 +36,7 @@ final darkTheme = ThemeData(
       statusBarIconBrightness: Brightness.light,
     ),
   ),
-  scaffoldBackgroundColor: AppColors.kColorWhite,
+  scaffoldBackgroundColor: AppColors.kColorScaffold,
   fontFamily: kFontFamily,
   colorScheme:
       const ColorScheme.dark().copyWith(surfaceTint: Colors.transparent),
@@ -49,7 +49,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   factory AppTheme.light() {
     return AppTheme._(
       backgroundTheme: const BackgroundTheme(
-        scaffoldColor: AppColors.kColorWhite,
+        scaffoldColor: AppColors.kColorScaffold,
         onPrimary: AppColors.kColorLightPurple,
       ),
       textStylesTheme: TextStylesTheme(

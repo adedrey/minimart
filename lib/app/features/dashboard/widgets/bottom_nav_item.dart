@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nex360/core/utils/theme/theme_extension.dart';
-import 'package:nex360/core/utils/utils.dart' show Menu;
-import 'package:nex360/core/widgets/widgets.dart'
+import 'package:minimart/core/utils/theme/theme_extension.dart';
+import 'package:minimart/core/utils/utils.dart' show Menu;
+import 'package:minimart/core/widgets/widgets.dart'
     show CustomImage, ImageConfig, TouchableOpacity;
 
 class BottomNavItem extends StatelessWidget {
@@ -22,22 +22,28 @@ class BottomNavItem extends StatelessWidget {
     final theme = Theme.of(context).appTheme;
     return TouchableOpacity(
       onTap: onTap,
-      padding: EdgeInsets.symmetric(horizontal: 14.5.h),
       child: AnimatedSize(
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeInOut,
         child: Column(
-          spacing: 6.h,
+          spacing: 4.h,
           children: [
-            CustomImage(
-              imageUrl: item.icon,
-              config: ImageConfig(
-                height: 20.h,
-                width: 20.h,
-                fit: BoxFit.contain,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 19.h, vertical: 6.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.r),
                 color: isActive
                     ? theme.menuTheme.primaryColor
                     : theme.menuTheme.primaryIdleColor,
+              ),
+              child: CustomImage(
+                imageUrl: item.icon,
+                config: ImageConfig(
+                  height: 24.h,
+                  width: 24.h,
+                  fit: BoxFit.contain,
+                  color: isActive ? theme.menuTheme.outline : null,
+                ),
               ),
             ),
             Text(
