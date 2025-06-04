@@ -5,4 +5,5 @@ export 'extensions/extensions.dart';
 export 'formatter/formatter.dart';
 export 'helpers/helpers.dart';
 export 'logger.dart';
+export 'strings.dart';
 export 'theme/theme.dart';

@@ -113,13 +113,16 @@ class AppTheme extends ThemeExtension<AppTheme> {
         title: kTextStyle.copyWith(
           fontSize: FontSizes.textXS,
           fontWeight: FontWeight.w600,
+          height: 2.8,
           color: AppColors.kColorGrey700,
         ),
         subtitle: kTextStyle.copyWith(
           fontSize: FontSizes.textXL,
           fontWeight: FontWeight.w600,
+          height: 2.8,
           color: AppColors.kColorGrey700,
         ),
+        border: AppColors.kColorGrey200,
       ),
       menuTheme: AppMenuTheme(
         primaryColor: AppColors.kColorPrimary,
