@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart' show Color;
 import 'package:minimart/core/utils/theme/theme.dart' show AppColors;
 
+enum ImageType { svg, png, jpg, jpeg, gif, webp, unknown }
+
 enum LoadingState { initial, loading, fetchingMore }
 
 enum DataState { empty, loaded, fetchedAll }
