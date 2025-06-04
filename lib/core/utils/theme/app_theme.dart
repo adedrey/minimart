@@ -123,6 +123,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
           color: AppColors.kColorGrey700,
         ),
         border: AppColors.kColorGrey200,
+        secondaryBorder: AppColors.kColorSectionFill,
       ),
       menuTheme: AppMenuTheme(
         primaryColor: AppColors.kColorPrimary,

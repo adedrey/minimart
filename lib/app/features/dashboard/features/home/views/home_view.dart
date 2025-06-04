@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minimart/core/widgets/customs/custom_appbar.dart';
+import 'package:minimart/core/widgets/customs/custom_back_button.dart';
 
 class HomeView extends ConsumerStatefulWidget {
   const HomeView({super.key});
@@ -22,6 +23,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
               controller: searchController,
               showInput: true,
             ),
+            const CustomBackButton(),
           ],
         ),
       ),

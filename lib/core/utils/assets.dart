@@ -19,6 +19,7 @@ class _AssetsSvg {
 
 
   final addSVG = 'assets/svg/add.svg';
+  final arrowLeftSVG = 'assets/svg/arrow_left.svg';
   final cartSVG = 'assets/svg/cart.svg';
   final homeSVG = 'assets/svg/home.svg';
   final likeSVG = 'assets/svg/like.svg';
