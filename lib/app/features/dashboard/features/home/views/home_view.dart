@@ -10,14 +10,17 @@ class HomeView extends ConsumerStatefulWidget {
 }
 
 class _HomeViewState extends ConsumerState<HomeView> {
+  final searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            const CustomAppBar(
+            CustomAppBar(
               location: 'Umuezike Road, Oyo State',
+              controller: searchController,
+              showInput: true,
             ),
           ],
         ),
