@@ -8,6 +8,10 @@ class ProductVM extends _$ProductVM {
   @override
   List<Product> build() => [];
 
+  set products(List<Product> products) => state = products;
+
+  List<Product> get products => state;
+
   Product? getProductById({required int id}) {
     final selectedProduct = state.firstWhere(
       (product) => product.id == id,

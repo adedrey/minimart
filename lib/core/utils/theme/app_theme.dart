@@ -22,8 +22,10 @@ final lightTheme = ThemeData(
   ),
   scaffoldBackgroundColor: AppColors.kColorScaffold,
   fontFamily: kFontFamily,
-  colorScheme:
-      const ColorScheme.light().copyWith(surfaceTint: Colors.transparent),
+  colorScheme: const ColorScheme.light().copyWith(
+    surfaceTint: Colors.transparent,
+    primary: AppColors.kColorPrimary,
+  ),
   extensions: [
     AppTheme.light(),
   ],
@@ -38,8 +40,10 @@ final darkTheme = ThemeData(
   ),
   scaffoldBackgroundColor: AppColors.kColorScaffold,
   fontFamily: kFontFamily,
-  colorScheme:
-      const ColorScheme.dark().copyWith(surfaceTint: Colors.transparent),
+  colorScheme: const ColorScheme.dark().copyWith(
+    surfaceTint: Colors.transparent,
+    primary: AppColors.kColorPrimary,
+  ),
   extensions: [
     AppTheme.dark(),
   ],
