@@ -83,7 +83,7 @@ lib/
 │   ├── repositories
 │           ├── cart/
 │           ├── product/
-│   ├── routes
+│   ├── routes/
 │   ├── utils
 │           ├── extensions/
 │           ├── formatter/
