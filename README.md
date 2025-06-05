@@ -8,7 +8,7 @@ Minimart is a Flutter project for managing a minimal gadgets shopping experience
 
 Follow these steps to set up and run the project locally.
 
-### 1. Clone the Repository
+### 1. Run Minimart Project
 
 ```sh
 # Copy to your machine
@@ -19,7 +19,7 @@ $ cd minimart
 $ flutter pub get
 
 # Generate Code
-$ dart run build_runner build
+$ dart run build_runner build --delete-conflicting-outputs
 
 # Run the App 
 
