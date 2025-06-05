@@ -27,6 +27,7 @@ class _AssetsSvg {
   final cartSVG = 'assets/svg/cart.svg';
   final homeSVG = 'assets/svg/home.svg';
   final likeSVG = 'assets/svg/like.svg';
+  final loveSVG = 'assets/svg/love.svg';
   final minusSVG = 'assets/svg/minus.svg';
   final notificationSVG = 'assets/svg/notification.svg';
   final profileSVG = 'assets/svg/profile.svg';

@@ -35,6 +35,17 @@ class ProductVM extends _$ProductVM {
     }
   }
 
+  void addToFav({required int id}) {
+    final productIndex = getProductIndexById(id: id);
+    if (productIndex >= 0) {
+      final product = state[productIndex];
+      final currentProductsState = state;
+      currentProductsState[productIndex] =
+          product.copyWith(isFavorite: !product.isFavorite);
+      state = currentProductsState;
+    }
+  }
+
   bool isProductInStock({required int id, required int total}) {
     final product = getProductById(id: id);
     if (product != null) {

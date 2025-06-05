@@ -15,6 +15,7 @@ class AppColors {
   static const kColorUnselected = Color(0xff999999);
   static const kColorLightPurple = Color(0xffF6F5F8);
   static const kColorSectionFill = Color(0xffF5F5F5);
+  static const kColorPink = Color(0xffFF2D55);
 }
 
 

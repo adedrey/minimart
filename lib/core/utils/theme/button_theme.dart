@@ -8,10 +8,12 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
     required this.tertiaryBorderColor,
     required this.primaryTextStyle,
     required this.tertiaryColor,
+    required this.surfaceColor,
   });
   final Color primaryColor;
   final Color secondaryColor;
   final Color tertiaryBorderColor;
+  final Color surfaceColor;
   final Color tertiaryColor;
   final TextStyle primaryTextStyle;
 
@@ -29,6 +31,7 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
       tertiaryBorderColor: tertiaryBorderColor,
       tertiaryColor: tertiaryColor,
       secondaryColor: secondaryColor,
+      surfaceColor: surfaceColor,
     );
   }
 
@@ -39,6 +42,7 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
     Color? tertiaryColor,
     TextStyle? primaryTextStyle,
     Color? secondaryColor,
+    Color? surfaceColor,
   }) {
     return AppButtonTheme(
       primaryColor: primaryColor ?? this.primaryColor,
@@ -46,6 +50,7 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
       tertiaryBorderColor: tertiaryBorderColor ?? this.tertiaryBorderColor,
       tertiaryColor: tertiaryColor ?? this.tertiaryColor,
       secondaryColor: secondaryColor ?? this.secondaryColor,
+      surfaceColor: surfaceColor ?? this.surfaceColor,
     );
   }
 }

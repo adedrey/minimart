@@ -9,12 +9,12 @@ import 'package:minimart/core/widgets/widgets.dart'
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar(
       {required this.location,
-      required this.controller,
+      this.controller,
       this.showInput = false,
       super.key});
   final String location;
   final bool showInput;
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -69,7 +69,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           ),
           if (widget.showInput)
             CustomInput(
-              controller: widget.controller,
+              controller: widget.controller!,
               prefix: Assets.svg.searchSVG,
               placeholder: 'Search...',
             ),

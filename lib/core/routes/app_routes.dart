@@ -6,7 +6,6 @@ import 'package:minimart/app/features/dashboard/features/home/features/product_d
 import 'package:minimart/app/features/dashboard/features/home/views/home_view.dart';
 import 'package:minimart/app/features/dashboard/features/profile/views/profile_view.dart';
 import 'package:minimart/app/features/dashboard/views/dashboard_view.dart';
-import 'package:minimart/core/models/products/product.dart';
 
 part 'app_routes.g.dart';
 
@@ -60,17 +59,14 @@ class HomeRoute extends GoRouteData {
 class ProductDetailRoute extends GoRouteData {
   const ProductDetailRoute({
     required this.id,
-    required this.$extra,
   });
 
   final int id;
-  final Product $extra;
   static final GlobalKey<NavigatorState> $parentNavigatorKey = rootNavigatorKey;
 
   @override
   Widget build(BuildContext context, GoRouterState state) => ProductDetail(
         id: id,
-        product: $extra,
       );
 }
 

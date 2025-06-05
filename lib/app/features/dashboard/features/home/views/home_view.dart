@@ -46,7 +46,9 @@ class _HomeViewState extends ConsumerState<HomeView> {
               controller: searchController,
               showInput: true,
             ),
-            const CustomBackButton(),
+            const CustomBackButton(
+              title: 'Technology',
+            ),
             Expanded(
               child: RefreshIndicator(
                 onRefresh: () =>

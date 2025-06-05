@@ -25,8 +25,7 @@ class HomeProducts extends ConsumerWidget {
           final product = products[index];
           return ProductTile(
             product: product,
-            action: () =>
-                ProductDetailRoute(id: product.id, $extra: product).go(context),
+            action: () => ProductDetailRoute(id: product.id).go(context),
           );
         },
       ),

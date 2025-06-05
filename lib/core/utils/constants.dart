@@ -14,7 +14,7 @@ class Constants {
       total: 5,
     ),
     Product(
-      id: 1,
+      id: 2,
       title: 'M4 Macbook Air 13” 256GB|Sky blue',
       amount: 1000,
       image: Assets.images.macbookJPG,
@@ -22,7 +22,7 @@ class Constants {
       total: 5,
     ),
     Product(
-      id: 1,
+      id: 3,
       title: 'Google Pixel 9A 128GB|Iris',
       amount: 499,
       image: Assets.images.pixelPNG,
@@ -30,7 +30,7 @@ class Constants {
       total: 5,
     ),
     Product(
-      id: 1,
+      id: 4,
       title: 'Apple Airpods 4 Active Noise Cancellation|Teal',
       amount: 129,
       image: Assets.images.earphoneJPG,
