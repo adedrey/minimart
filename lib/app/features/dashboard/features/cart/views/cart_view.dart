@@ -62,32 +62,33 @@ class _CartViewState extends ConsumerState<CartView> {
                       itemCount: cartP.carts.length,
                     ),
                     Gap(15.h),
-                    Column(
-                      spacing: 15.h,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          AppString.orderInfo,
-                          style: theme.textStylesTheme.labelLarge,
-                        ),
-                        _orderInfo(
-                          theme,
-                          title: AppString.subtotal,
-                          amount: cartP.total,
-                        ),
-                        _orderInfo(
-                          theme,
-                          title: AppString.shipping,
-                          amount: cartP.shipping,
-                        ),
-                        _orderInfo(
-                          theme,
-                          title: AppString.total,
-                          amount: cartP.total + cartP.shipping,
-                          isTotal: true,
-                        ),
-                      ],
-                    ),
+                    if (cartP.carts.isNotEmpty)
+                      Column(
+                        spacing: 15.h,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            AppString.orderInfo,
+                            style: theme.textStylesTheme.labelLarge,
+                          ),
+                          _orderInfo(
+                            theme,
+                            title: AppString.subtotal,
+                            amount: cartP.total,
+                          ),
+                          _orderInfo(
+                            theme,
+                            title: AppString.shipping,
+                            amount: cartP.shipping,
+                          ),
+                          _orderInfo(
+                            theme,
+                            title: AppString.total,
+                            amount: cartP.total + cartP.shipping,
+                            isTotal: true,
+                          ),
+                        ],
+                      ),
                   ],
                 ),
               ),
