@@ -49,6 +49,8 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
     final theme = Theme.of(context).appTheme;
     return Scaffold(
       body: SafeArea(
+        minimum: WidgetHelper.safeArea(),
+        bottom: false,
         child: Column(
           children: [
             const CustomAppBar(
@@ -149,6 +151,7 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
                 label: AppString.addToCart,
               ),
             ),
+            WidgetHelper.bottomGap(),
           ],
         ),
       ),

@@ -81,7 +81,9 @@ class _DashboardViewState extends ConsumerState<DashboardView>
           left: 16.h,
           right: 16.h,
           top: 6.h,
-          bottom: ScreenUtil().bottomBarHeight,
+          // bottom: ScreenUtil().bottomBarHeight,
+
+          bottom: WidgetHelper.bottomGapOS(),
         ),
         decoration: BoxDecoration(
           color: theme.menuTheme.outline.withValues(alpha: .95),

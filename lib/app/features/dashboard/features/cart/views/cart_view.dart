@@ -24,6 +24,8 @@ class _CartViewState extends ConsumerState<CartView> {
     final theme = Theme.of(context).appTheme;
     return Scaffold(
       body: SafeArea(
+        bottom: false,
+        minimum: WidgetHelper.safeArea(),
         child: Column(
           children: [
             const CustomAppBar(
@@ -96,13 +98,17 @@ class _CartViewState extends ConsumerState<CartView> {
             Divider(
               color: theme.appBarTheme.secondaryBorder,
             ),
+            Gap(12.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 12.h),
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.h,
+              ),
               child: CustomButton(
                 action: () {},
                 label: AppString.checkout,
               ),
             ),
+            WidgetHelper.bottomGap(),
           ],
         ),
       ),

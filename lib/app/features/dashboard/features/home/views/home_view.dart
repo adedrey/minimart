@@ -39,6 +39,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
     });
     return Scaffold(
       body: SafeArea(
+        minimum: WidgetHelper.safeArea(),
         child: Column(
           children: [
             CustomAppBar(
