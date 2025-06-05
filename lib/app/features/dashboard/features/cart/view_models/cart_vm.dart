@@ -10,6 +10,7 @@ part 'cart_vm.g.dart';
 abstract class CartState with _$CartState {
   const factory CartState({
     @Default(0) num total,
+    @Default(10) num shipping,
     @Default([]) List<CartModel> carts,
     String? errorMessage,
   }) = _CartState;

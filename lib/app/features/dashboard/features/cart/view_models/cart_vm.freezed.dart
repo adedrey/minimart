@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CartState {
   num get total;
+  num get shipping;
   List<CartModel> get carts;
   String? get errorMessage;
 
@@ -32,18 +33,20 @@ mixin _$CartState {
         (other.runtimeType == runtimeType &&
             other is CartState &&
             (identical(other.total, total) || other.total == total) &&
+            (identical(other.shipping, shipping) ||
+                other.shipping == shipping) &&
             const DeepCollectionEquality().equals(other.carts, carts) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, total,
+  int get hashCode => Object.hash(runtimeType, total, shipping,
       const DeepCollectionEquality().hash(carts), errorMessage);
 
   @override
   String toString() {
-    return 'CartState(total: $total, carts: $carts, errorMessage: $errorMessage)';
+    return 'CartState(total: $total, shipping: $shipping, carts: $carts, errorMessage: $errorMessage)';
   }
 }
 
@@ -52,7 +55,8 @@ abstract mixin class $CartStateCopyWith<$Res> {
   factory $CartStateCopyWith(CartState value, $Res Function(CartState) _then) =
       _$CartStateCopyWithImpl;
   @useResult
-  $Res call({num total, List<CartModel> carts, String? errorMessage});
+  $Res call(
+      {num total, num shipping, List<CartModel> carts, String? errorMessage});
 }
 
 /// @nodoc
@@ -68,6 +72,7 @@ class _$CartStateCopyWithImpl<$Res> implements $CartStateCopyWith<$Res> {
   @override
   $Res call({
     Object? total = null,
+    Object? shipping = null,
     Object? carts = null,
     Object? errorMessage = freezed,
   }) {
@@ -75,6 +80,10 @@ class _$CartStateCopyWithImpl<$Res> implements $CartStateCopyWith<$Res> {
       total: null == total
           ? _self.total
           : total // ignore: cast_nullable_to_non_nullable
+              as num,
+      shipping: null == shipping
+          ? _self.shipping
+          : shipping // ignore: cast_nullable_to_non_nullable
               as num,
       carts: null == carts
           ? _self.carts
@@ -93,6 +102,7 @@ class _$CartStateCopyWithImpl<$Res> implements $CartStateCopyWith<$Res> {
 class _CartState implements CartState {
   const _CartState(
       {this.total = 0,
+      this.shipping = 10,
       final List<CartModel> carts = const [],
       this.errorMessage})
       : _carts = carts;
@@ -100,6 +110,9 @@ class _CartState implements CartState {
   @override
   @JsonKey()
   final num total;
+  @override
+  @JsonKey()
+  final num shipping;
   final List<CartModel> _carts;
   @override
   @JsonKey()
@@ -126,18 +139,20 @@ class _CartState implements CartState {
         (other.runtimeType == runtimeType &&
             other is _CartState &&
             (identical(other.total, total) || other.total == total) &&
+            (identical(other.shipping, shipping) ||
+                other.shipping == shipping) &&
             const DeepCollectionEquality().equals(other._carts, _carts) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, total,
+  int get hashCode => Object.hash(runtimeType, total, shipping,
       const DeepCollectionEquality().hash(_carts), errorMessage);
 
   @override
   String toString() {
-    return 'CartState(total: $total, carts: $carts, errorMessage: $errorMessage)';
+    return 'CartState(total: $total, shipping: $shipping, carts: $carts, errorMessage: $errorMessage)';
   }
 }
 
@@ -149,7 +164,8 @@ abstract mixin class _$CartStateCopyWith<$Res>
       __$CartStateCopyWithImpl;
   @override
   @useResult
-  $Res call({num total, List<CartModel> carts, String? errorMessage});
+  $Res call(
+      {num total, num shipping, List<CartModel> carts, String? errorMessage});
 }
 
 /// @nodoc
@@ -165,6 +181,7 @@ class __$CartStateCopyWithImpl<$Res> implements _$CartStateCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   $Res call({
     Object? total = null,
+    Object? shipping = null,
     Object? carts = null,
     Object? errorMessage = freezed,
   }) {
@@ -172,6 +189,10 @@ class __$CartStateCopyWithImpl<$Res> implements _$CartStateCopyWith<$Res> {
       total: null == total
           ? _self.total
           : total // ignore: cast_nullable_to_non_nullable
+              as num,
+      shipping: null == shipping
+          ? _self.shipping
+          : shipping // ignore: cast_nullable_to_non_nullable
               as num,
       carts: null == carts
           ? _self._carts
