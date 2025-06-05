@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:minimart/core/utils/utils.dart' show Assets, ThemeDataExtended;
 import 'package:minimart/core/widgets/widgets.dart'
     show CustomImage, ImageConfig, TouchableOpacity;
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({
+    required this.action,
     this.title = 'Go back',
     super.key,
   });
   final String title;
+  final VoidCallback action;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class CustomBackButton extends StatelessWidget {
       ),
       alignment: Alignment.centerLeft,
       child: TouchableOpacity(
-        onTap: context.canPop() ? context.pop : null,
+        onTap: action,
         child: IntrinsicWidth(
           child: Row(
             mainAxisSize: MainAxisSize.min,

@@ -25,7 +25,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).appTheme;
     return Container(
-      padding: EdgeInsets.fromLTRB(16.h, 0, 16.h, 16.h),
+      padding: EdgeInsets.fromLTRB(16.h, 0, 16.h, 14.h),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(

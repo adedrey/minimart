@@ -18,7 +18,14 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
       path: '/',
       name: 'home',
       routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<ProductDetailRoute>(path: 'product/:id'),
+        TypedGoRoute<ProductDetailRoute>(
+          path: 'product/:id',
+          routes: <TypedRoute<RouteData>>[
+            TypedGoRoute<CartDetailRoute>(
+              path: 'carts',
+            ),
+          ],
+        ),
       ],
     ),
     TypedGoRoute<CartRoute>(
@@ -72,6 +79,18 @@ class ProductDetailRoute extends GoRouteData {
 
 class CartRoute extends GoRouteData {
   const CartRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const CartView();
+}
+
+class CartDetailRoute extends GoRouteData {
+  const CartDetailRoute({
+    required this.id,
+  });
+
+  final int id;
+  static final GlobalKey<NavigatorState> $parentNavigatorKey = rootNavigatorKey;
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const CartView();

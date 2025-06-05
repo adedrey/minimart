@@ -6,7 +6,7 @@ part of 'toast_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$toastHash() => r'91cd13d789a45aae3b11f22c1bfe8d78e98fbfff';
+String _$toastHash() => r'0b4b8e1747161ed2f8f36bf97fa6fe39cf7bf581';
 
 /// Copied from Dart SDK
 class _SystemHash {

@@ -23,15 +23,17 @@ class CartVM extends _$CartVM {
   @override
   CartState build() => CartState.initial();
 
-  void addToCart({required CartModel cart}) {
+  bool addToCart({required CartModel cart}) {
     final index = _findProductIndex(cart.product.id);
     if (index != -1) {
       increaseQuantity(productId: cart.product.id);
     } else {
       if (_checkIfProductIsInStock(cart.product.id, 1)) {
         _updateTotalAndCarts([...state.carts, cart.copyWith(quantity: 1)]);
+        return true;
       }
     }
+    return false;
   }
 
   void increaseQuantity({required int productId}) {

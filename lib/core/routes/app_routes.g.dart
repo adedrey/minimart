@@ -23,6 +23,13 @@ RouteBase get $dashboardShellRoute => ShellRouteData.$route(
               path: 'product/:id',
               parentNavigatorKey: ProductDetailRoute.$parentNavigatorKey,
               factory: $ProductDetailRouteExtension._fromState,
+              routes: [
+                GoRouteData.$route(
+                  path: 'carts',
+                  parentNavigatorKey: CartDetailRoute.$parentNavigatorKey,
+                  factory: $CartDetailRouteExtension._fromState,
+                ),
+              ],
             ),
           ],
         ),
@@ -74,6 +81,25 @@ extension $ProductDetailRouteExtension on ProductDetailRoute {
 
   String get location => GoRouteData.$location(
         '/product/${Uri.encodeComponent(id.toString())}',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $CartDetailRouteExtension on CartDetailRoute {
+  static CartDetailRoute _fromState(GoRouterState state) => CartDetailRoute(
+        id: int.parse(state.pathParameters['id']!)!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/product/${Uri.encodeComponent(id.toString())}/carts',
       );
 
   void go(BuildContext context) => context.go(location);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:minimart/app/features/dashboard/features/cart/view_models/cart_vm.dart';
 import 'package:minimart/app/features/dashboard/features/cart/widgets/cart_item.dart';
 import 'package:minimart/core/utils/theme/app_theme.dart';
@@ -28,8 +29,9 @@ class _CartViewState extends ConsumerState<CartView> {
             const CustomAppBar(
               location: 'Umuezike Road, Oyo State',
             ),
-            const CustomBackButton(
+            CustomBackButton(
               title: 'Your Carts',
+              action: context.canPop() ? context.pop : () {},
             ),
             Expanded(
               child: SingleChildScrollView(

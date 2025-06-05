@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:minimart/app/features/dashboard/features/cart/view_models/cart_vm.dart';
 import 'package:minimart/core/models/cart/cart_model.dart';
 import 'package:minimart/core/models/products/product.dart';
 import 'package:minimart/core/providers/products/product_vm.dart';
+import 'package:minimart/core/routes/app_routes.dart';
 import 'package:minimart/core/utils/theme/app_theme.dart';
 import 'package:minimart/core/utils/utils.dart';
 import 'package:minimart/core/widgets/customs/custom_appbar.dart';
@@ -52,7 +54,9 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
             const CustomAppBar(
               location: 'Umuezike Road, Oyo State',
             ),
-            const CustomBackButton(),
+            CustomBackButton(
+              action: context.pop,
+            ),
             Expanded(
               child: SingleChildScrollView(
                 physics: const AlwaysScrollableScrollPhysics(),
@@ -68,7 +72,8 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
                                 width: MediaQuery.sizeOf(context).width,
                                 height: 331.h,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(9.r)),
+                                  borderRadius: BorderRadius.circular(9.r),
+                                ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(9.r),
                                   child: CustomImage(imageUrl: product!.image),
@@ -127,14 +132,18 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
               child: CustomButton(
                 action: () {
                   if (product != null) {
-                    ref.read(cartVMProvider.notifier).addToCart(
-                          cart: CartModel(
-                            id: product?.id ?? 0,
-                            product: product!,
-                            quantity: 1,
-                          ),
-                        );
-                    'Item has been added to cart'.showAsSuccessToast(context);
+                    final response =
+                        ref.read(cartVMProvider.notifier).addToCart(
+                              cart: CartModel(
+                                id: product?.id ?? 0,
+                                product: product!,
+                                quantity: 1,
+                              ),
+                            );
+                    if (response) {
+                      'Item has been added to cart'.showAsSuccessToast(context);
+                    }
+                    CartDetailRoute(id: widget.id).go(context);
                   }
                 },
                 label: AppString.addToCart,
