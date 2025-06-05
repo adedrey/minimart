@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimart/core/utils/theme/theme.dart';
 
-const kFontFamily = 'FoxGrotesquePro';
+const kFontFamily = 'IBMPlexSans';
+const kFontFamily2 = 'SFProText';
 
 final TextStyle kTextStyle = TextStyle(
   fontWeight: FontWeight.w400,

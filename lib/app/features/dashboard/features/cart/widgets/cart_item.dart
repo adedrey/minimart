@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:minimart/core/models/cart/cart_model.dart';
+import 'package:minimart/core/utils/theme/app_theme.dart';
 import 'package:minimart/core/utils/utils.dart';
 import 'package:minimart/core/widgets/widgets.dart';
 
@@ -48,19 +49,22 @@ class CartItem extends StatelessWidget {
                 children: [
                   Text(
                     cart.product.title,
-                    style: theme.textStylesTheme.primaryDisplaySmall,
+                    style: theme.textStylesTheme.primaryDisplaySmall
+                        .copyWith(fontFamily: kFontFamily2),
                   ),
                   Gap(6.h),
                   Text(
                     AppFormatter.money(cart.product.amount),
-                    style: theme.textStylesTheme.primaryTitleSmall,
+                    style: theme.textStylesTheme.primaryTitleSmall
+                        .copyWith(fontFamily: kFontFamily2),
                   ),
                   Gap(6.h),
                   Text(
                     cart.product.total > cart.quantity
                         ? 'In stock'
                         : 'Out of Stock',
-                    style: theme.textStylesTheme.inverseBodySmall,
+                    style: theme.textStylesTheme.inverseBodySmall
+                        .copyWith(fontFamily: kFontFamily2),
                   ),
                   Gap(8.h),
                   Row(
@@ -82,8 +86,8 @@ class CartItem extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: 8.w),
                               child: Text(
                                 cart.quantity.toString(),
-                                style:
-                                    theme.textStylesTheme.primaryDisplaySmall,
+                                style: theme.textStylesTheme.primaryDisplaySmall
+                                    .copyWith(fontFamily: kFontFamily2),
                               ),
                             ),
                             CustomIconButton(
