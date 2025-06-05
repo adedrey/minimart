@@ -1,6 +1,6 @@
 # 🛒 Minimart
 
-Minimart is a Flutter project for managing a minimal gadgets shopping experience.
+Minimart is a Flutter project for managing a minimal gadgets shopping experience and its an open-source UI.
 
 ---
 
@@ -33,6 +33,74 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 $ flutter run --flavor production --target lib/main_production.dart
 ```
 
+### Folder Structure
+assets/
+│   ├── fonts/
+│   └── images/
+│   └── svg/
+lib/
+├── app/
+│   ├── features/
+│           ├── dashboard
+│                      ├── features/
+│                               ├── cart/
+│                                       ├── view_models/
+│                                       ├── views/
+│                                       ├── widgets/
+│                               ├── favorites/
+│                                       ├── views/
+│                               ├── home/
+│                                       ├── features/
+│                                                  ├── product_detail/
+│                                                           ├── views/
+│                                                           ├── widgets/
+│                                       ├── view_models/
+│                                       ├── views/
+│                                       ├── widgets/
+│                               ├── profile/
+│                                       ├── views/
+│                      ├── views/
+│                      ├── widgets/
+│   ├── view/
+│   └── profile/
+├── core/
+│   ├── config/
+│           ├── env     
+│   ├── models/
+│           ├── cart/
+│           ├── common/
+│           ├── products/
+│           ├── app_result.dart
+│   ├── providers
+│           ├── app/
+│           ├── products/
+│           ├── repositories/
+│                       ├── cart/
+│                       ├── product/
+│           ├── toast/
+│   ├── repositories
+│           ├── cart/
+│           ├── product/
+│   ├── routes
+│   ├── utils
+│           ├── extensions/
+│           ├── formatter/
+│           ├── helpers/
+│           ├── theme/
+│   ├── widgets
+│           ├── common/
+│           ├── customs/
+│           ├── shimmers/
+
+### What was used
+
+- State management - Riverpod
+- Navigation - GoRouter (Typed safe routes)
+- Responsiveness - Flutter screenutil
+- Styling - IBM Plex Sans & SF Pro Text
+- Icons - SVG
+
+
 ### Screenshots
 
 🏠 Home Screen
@@ -52,3 +120,4 @@ $ flutter run --flavor production --target lib/main_production.dart
 
 ![Cart - Checkout Screen](screenshots/Cart-CheckoutFromProduct.png)
 ![Cart Screen/Tab](screenshots/CartScreen.png)
+
