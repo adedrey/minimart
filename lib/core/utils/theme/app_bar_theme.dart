@@ -6,9 +6,11 @@ class ApppBarTheme extends ThemeExtension<ApppBarTheme> {
     required this.subtitle,
     required this.border,
     required this.secondaryBorder,
+    required this.badgeTextStyle,
   });
   final TextStyle title;
   final TextStyle subtitle;
+  final TextStyle badgeTextStyle;
   final Color border;
   final Color secondaryBorder;
 
@@ -25,6 +27,7 @@ class ApppBarTheme extends ThemeExtension<ApppBarTheme> {
       subtitle: subtitle,
       border: border,
       secondaryBorder: secondaryBorder,
+      badgeTextStyle: badgeTextStyle,
     );
   }
 
@@ -34,11 +37,14 @@ class ApppBarTheme extends ThemeExtension<ApppBarTheme> {
     Color? secondaryBorder,
     TextStyle? title,
     TextStyle? subtitle,
+    TextStyle? badgeTextStyle,
   }) {
     return ApppBarTheme(
-        title: title ?? this.title,
-        subtitle: subtitle ?? this.subtitle,
-        border: border ?? this.border,
-        secondaryBorder: secondaryBorder ?? this.secondaryBorder);
+      title: title ?? this.title,
+      subtitle: subtitle ?? this.subtitle,
+      border: border ?? this.border,
+      secondaryBorder: secondaryBorder ?? this.secondaryBorder,
+      badgeTextStyle: badgeTextStyle ?? this.badgeTextStyle,
+    );
   }
 }

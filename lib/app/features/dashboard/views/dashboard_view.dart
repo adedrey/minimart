@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:minimart/app/features/dashboard/features/cart/view_models/cart_vm.dart';
 import 'package:minimart/app/features/dashboard/features/cart/views/cart_view.dart';
 import 'package:minimart/app/features/dashboard/features/favorites/views/favorites_view.dart';
 import 'package:minimart/app/features/dashboard/features/home/views/home_view.dart';
@@ -98,6 +99,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
               (menu) => BottomNavItem(
                 item: menu,
                 isActive: currentIndex == menu.index,
+                totalCartItem: ref.watch(cartVMProvider).carts.length,
                 onTap: () {
                   switch (menu.index) {
                     case 0:

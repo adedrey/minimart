@@ -16,10 +16,5 @@ class AppColors {
   static const kColorLightPurple = Color(0xffF6F5F8);
   static const kColorSectionFill = Color(0xffF5F5F5);
   static const kColorPink = Color(0xffFF2D55);
+  static const kColorBadge = Color(0xff3C4856);
 }
-
-
-
-// SF PRO - 400, 600
-
-// IBM Plex Sans - 500, 400, 700, 600

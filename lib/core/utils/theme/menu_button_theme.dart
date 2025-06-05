@@ -9,6 +9,7 @@ class AppMenuTheme extends ThemeExtension<AppMenuTheme> {
     required this.primaryTextStyle,
     required this.primaryIdleTextStyle,
     required this.iconSize,
+    required this.badgeColor,
   });
 
   final Color primaryColor;
@@ -17,6 +18,7 @@ class AppMenuTheme extends ThemeExtension<AppMenuTheme> {
   final TextStyle primaryTextStyle;
   final TextStyle primaryIdleTextStyle;
   final double iconSize;
+  final Color badgeColor;
 
   @override
   AppMenuTheme lerp(
@@ -33,6 +35,7 @@ class AppMenuTheme extends ThemeExtension<AppMenuTheme> {
       primaryTextStyle: primaryTextStyle,
       iconSize: iconSize,
       outline: outline,
+      badgeColor: badgeColor,
     );
   }
 
@@ -44,6 +47,7 @@ class AppMenuTheme extends ThemeExtension<AppMenuTheme> {
     TextStyle? primaryTextStyle,
     double? iconSize,
     Color? outline,
+    Color? badgeColor,
   }) {
     return AppMenuTheme(
       primaryColor: primaryColor ?? this.primaryColor,
@@ -52,6 +56,7 @@ class AppMenuTheme extends ThemeExtension<AppMenuTheme> {
       primaryIdleTextStyle: primaryIdleTextStyle ?? this.primaryIdleTextStyle,
       iconSize: iconSize ?? this.iconSize,
       outline: outline ?? this.outline,
+      badgeColor: badgeColor ?? this.badgeColor,
     );
   }
 }

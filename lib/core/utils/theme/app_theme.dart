@@ -127,6 +127,11 @@ class AppTheme extends ThemeExtension<AppTheme> {
           height: 2.8,
           color: AppColors.kColorGrey700,
         ),
+        badgeTextStyle: kTextStyle.copyWith(
+          fontWeight: FontWeight.w700,
+          fontSize: FontSizes.textXS,
+          color: AppColors.kColorWhite,
+        ),
         border: AppColors.kColorGrey200,
         secondaryBorder: AppColors.kColorSectionFill,
       ),
@@ -145,6 +150,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
           color: AppColors.kColorSurfaceVariant,
         ),
         iconSize: IconSizes.size1,
+        badgeColor: AppColors.kColorBadge,
       ),
       buttonTheme: AppButtonTheme(
         primaryColor: AppColors.kColorPrimary,
