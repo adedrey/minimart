@@ -64,7 +64,6 @@ lib/
 │                      ├── views/
 │                      ├── widgets/
 │   ├── view/
-│   └── profile/
 ├── core/
 │   ├── config/
 │           ├── env     
