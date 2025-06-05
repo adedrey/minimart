@@ -34,7 +34,7 @@ class _AppState extends ConsumerState<App> {
             child: MaterialApp.router(
               routerConfig: router,
               debugShowCheckedModeBanner: false,
-              title: 'NEX360',
+              title: 'Minimart',
               theme: lightTheme,
               darkTheme: darkTheme,
               themeMode: themeMode,

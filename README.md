@@ -1,6 +1,6 @@
 # 🛒 Minimart
 
-Minimart is a Flutter project for managing a minimal grocery shopping experience with flavor-based environments.
+Minimart is a Flutter project for managing a minimal gadgets shopping experience.
 
 ---
 

@@ -84,12 +84,6 @@ class _DashboardViewState extends ConsumerState<DashboardView>
         ),
         decoration: BoxDecoration(
           color: theme.menuTheme.outline.withValues(alpha: .95),
-          // border: Border(
-          //   top: BorderSide(
-          //     width: .4,
-          //     color: theme.menuTheme.outline,
-          //   ),
-          // ),
         ),
         child: Wrap(
           alignment: WrapAlignment.spaceAround,
