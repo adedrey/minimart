@@ -23,6 +23,11 @@ class ProductTile extends StatelessWidget {
     final theme = Theme.of(context).appTheme;
     return Skeletonizer(
       enabled: isLoading,
+      effect: ShimmerEffect(
+        baseColor: Colors.grey.shade400,
+        highlightColor: Colors.grey.shade200,
+        duration: const Duration(seconds: 1),
+      ),
       child: TouchableOpacity(
         onTap: action,
         constraints: BoxConstraints(maxWidth: 162.h, maxHeight: 238.h),
