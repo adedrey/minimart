@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'product_vm.dart';
+part of 'cart_vm.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$productVMHash() => r'a1f7cd3c005cc1ac2623f3c38c077d620d76f96b';
+String _$cartVMHash() => r'0954e4255681a861bef6f484e4573608d31cc845';
 
-/// See also [ProductVM].
-@ProviderFor(ProductVM)
-final productVMProvider = NotifierProvider<ProductVM, List<Product>>.internal(
-  ProductVM.new,
-  name: r'productVMProvider',
+/// See also [CartVM].
+@ProviderFor(CartVM)
+final cartVMProvider = NotifierProvider<CartVM, CartState>.internal(
+  CartVM.new,
+  name: r'cartVMProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$productVMHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$cartVMHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ProductVM = Notifier<List<Product>>;
+typedef _$CartVM = Notifier<CartState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

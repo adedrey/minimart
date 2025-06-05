@@ -152,8 +152,8 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
 
 /// @nodoc
 
-class _Order implements Product {
-  _Order(
+class _Product implements Product {
+  _Product(
       {this.id = 0,
       this.title = '',
       this.image = '',
@@ -202,14 +202,14 @@ class _Order implements Product {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$OrderCopyWith<_Order> get copyWith =>
-      __$OrderCopyWithImpl<_Order>(this, _$identity);
+  _$ProductCopyWith<_Product> get copyWith =>
+      __$ProductCopyWithImpl<_Product>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Order &&
+            other is _Product &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.image, image) || other.image == image) &&
@@ -244,9 +244,9 @@ class _Order implements Product {
 }
 
 /// @nodoc
-abstract mixin class _$OrderCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$OrderCopyWith(_Order value, $Res Function(_Order) _then) =
-      __$OrderCopyWithImpl;
+abstract mixin class _$ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$ProductCopyWith(_Product value, $Res Function(_Product) _then) =
+      __$ProductCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -262,11 +262,11 @@ abstract mixin class _$OrderCopyWith<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$OrderCopyWithImpl<$Res> implements _$OrderCopyWith<$Res> {
-  __$OrderCopyWithImpl(this._self, this._then);
+class __$ProductCopyWithImpl<$Res> implements _$ProductCopyWith<$Res> {
+  __$ProductCopyWithImpl(this._self, this._then);
 
-  final _Order _self;
-  final $Res Function(_Order) _then;
+  final _Product _self;
+  final $Res Function(_Product) _then;
 
   /// Create a copy of Product
   /// with the given fields replaced by the non-null parameter values.
@@ -283,7 +283,7 @@ class __$OrderCopyWithImpl<$Res> implements _$OrderCopyWith<$Res> {
     Object? updatedAt = freezed,
     Object? createdAt = freezed,
   }) {
-    return _then(_Order(
+    return _then(_Product(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable

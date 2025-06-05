@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:minimart/app/features/dashboard/features/cart/view_models/cart_vm.dart';
+import 'package:minimart/core/models/cart/cart_model.dart';
 import 'package:minimart/core/models/products/product.dart';
 import 'package:minimart/core/providers/products/product_vm.dart';
 import 'package:minimart/core/utils/theme/app_theme.dart';
@@ -9,7 +11,7 @@ import 'package:minimart/core/utils/utils.dart';
 import 'package:minimart/core/widgets/customs/custom_appbar.dart';
 import 'package:minimart/core/widgets/customs/custom_back_button.dart';
 import 'package:minimart/core/widgets/widgets.dart'
-    show CustomIconButton, CustomImage;
+    show CustomButton, CustomIconButton, CustomImage;
 
 class ProductDetail extends ConsumerStatefulWidget {
   const ProductDetail({required this.id, super.key});
@@ -91,8 +93,6 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
                           Gap(11.h),
                           Text(
                             product!.title,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
                             style: theme.textStylesTheme.primaryTitleSmall
                                 .copyWith(
                               fontWeight: FontWeight.w400,
@@ -120,6 +120,25 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
             ),
             Divider(
               color: theme.appBarTheme.secondaryBorder,
+            ),
+            Gap(12.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.h),
+              child: CustomButton(
+                action: () {
+                  if (product != null) {
+                    ref.read(cartVMProvider.notifier).addToCart(
+                          cart: CartModel(
+                            id: product?.id ?? 0,
+                            product: product!,
+                            quantity: 1,
+                          ),
+                        );
+                    'Item has been added to cart'.showAsSuccessToast(context);
+                  }
+                },
+                label: AppString.addToCart,
+              ),
             ),
           ],
         ),

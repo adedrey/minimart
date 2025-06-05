@@ -18,7 +18,7 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
       path: '/',
       name: 'home',
       routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<ProductDetailRoute>(path: ':id'),
+        TypedGoRoute<ProductDetailRoute>(path: 'product/:id'),
       ],
     ),
     TypedGoRoute<CartRoute>(

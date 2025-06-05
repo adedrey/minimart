@@ -151,6 +151,9 @@ class AppTheme extends ThemeExtension<AppTheme> {
         secondaryColor: AppColors.kColorGrey200,
         tertiaryBorderColor: AppColors.kColorGrey200,
         surfaceColor: AppColors.kColorPink,
+        primaryIconColor: AppColors.kColorGrey700,
+        secondaryIconColor: AppColors.kColorGrey500,
+        tertiaryIconColor: AppColors.kColorUnselected,
         primaryTextStyle: kTextStyle.copyWith(
           fontWeight: FontWeight.w700,
           fontSize: FontSizes.textSM,

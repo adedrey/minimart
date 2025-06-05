@@ -6,9 +6,12 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
     required this.primaryColor,
     required this.secondaryColor,
     required this.tertiaryBorderColor,
-    required this.primaryTextStyle,
-    required this.tertiaryColor,
     required this.surfaceColor,
+    required this.tertiaryColor,
+    required this.primaryTextStyle,
+    required this.primaryIconColor,
+    required this.secondaryIconColor,
+    required this.tertiaryIconColor,
   });
   final Color primaryColor;
   final Color secondaryColor;
@@ -16,6 +19,9 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
   final Color surfaceColor;
   final Color tertiaryColor;
   final TextStyle primaryTextStyle;
+  final Color primaryIconColor;
+  final Color secondaryIconColor;
+  final Color tertiaryIconColor;
 
   @override
   AppButtonTheme lerp(
@@ -32,6 +38,9 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
       tertiaryColor: tertiaryColor,
       secondaryColor: secondaryColor,
       surfaceColor: surfaceColor,
+      primaryIconColor: primaryIconColor,
+      secondaryIconColor: secondaryIconColor,
+      tertiaryIconColor: tertiaryIconColor,
     );
   }
 
@@ -43,6 +52,9 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
     TextStyle? primaryTextStyle,
     Color? secondaryColor,
     Color? surfaceColor,
+    Color? primaryIconColor,
+    Color? secondaryIconColor,
+    Color? tertiaryIconColor,
   }) {
     return AppButtonTheme(
       primaryColor: primaryColor ?? this.primaryColor,
@@ -51,6 +63,9 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
       tertiaryColor: tertiaryColor ?? this.tertiaryColor,
       secondaryColor: secondaryColor ?? this.secondaryColor,
       surfaceColor: surfaceColor ?? this.surfaceColor,
+      primaryIconColor: primaryIconColor ?? this.primaryIconColor,
+      secondaryIconColor: secondaryIconColor ?? this.secondaryIconColor,
+      tertiaryIconColor: tertiaryIconColor ?? this.tertiaryIconColor,
     );
   }
 }

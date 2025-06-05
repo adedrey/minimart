@@ -14,7 +14,7 @@ abstract class Product with _$Product {
     @Default(false) bool isFavorite,
     DateTime? updatedAt,
     DateTime? createdAt,
-  }) = _Order;
+  }) = _Product;
 
   factory Product.empty() => Product();
 }

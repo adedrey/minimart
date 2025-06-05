@@ -20,7 +20,7 @@ RouteBase get $dashboardShellRoute => ShellRouteData.$route(
           factory: $HomeRouteExtension._fromState,
           routes: [
             GoRouteData.$route(
-              path: ':id',
+              path: 'product/:id',
               parentNavigatorKey: ProductDetailRoute.$parentNavigatorKey,
               factory: $ProductDetailRouteExtension._fromState,
             ),
@@ -73,7 +73,7 @@ extension $ProductDetailRouteExtension on ProductDetailRoute {
       );
 
   String get location => GoRouteData.$location(
-        '/${Uri.encodeComponent(id.toString())}',
+        '/product/${Uri.encodeComponent(id.toString())}',
       );
 
   void go(BuildContext context) => context.go(location);
