@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimart/core/models/products/product.dart';
+import 'package:minimart/core/routes/app_routes.dart';
 import 'package:minimart/core/widgets/common/products/product_tile.dart';
 
 class HomeProducts extends ConsumerWidget {
@@ -24,7 +25,8 @@ class HomeProducts extends ConsumerWidget {
           final product = products[index];
           return ProductTile(
             product: product,
-            action: () {},
+            action: () =>
+                ProductDetailRoute(id: product.id, $extra: product).go(context),
           );
         },
       ),
