@@ -7,7 +7,6 @@ import 'package:minimart/app/features/dashboard/features/cart/view_models/cart_v
 import 'package:minimart/core/models/cart/cart_model.dart';
 import 'package:minimart/core/models/products/product.dart';
 import 'package:minimart/core/providers/products/product_vm.dart';
-import 'package:minimart/core/routes/app_routes.dart';
 import 'package:minimart/core/utils/theme/app_theme.dart';
 import 'package:minimart/core/utils/utils.dart';
 import 'package:minimart/core/widgets/customs/custom_appbar.dart';
@@ -49,7 +48,8 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
     final theme = Theme.of(context).appTheme;
     return Scaffold(
       body: SafeArea(
-        minimum: WidgetHelper.safeArea(),
+        minimum: WidgetHelper.safeArea()
+            .copyWith(top: ScreenUtil().statusBarHeight + 10.h),
         bottom: false,
         child: Column(
           children: [
@@ -134,18 +134,14 @@ class _ProductDetailState extends ConsumerState<ProductDetail> {
               child: CustomButton(
                 action: () {
                   if (product != null) {
-                    final response =
-                        ref.read(cartVMProvider.notifier).addToCart(
-                              cart: CartModel(
-                                id: product?.id ?? 0,
-                                product: product!,
-                                quantity: 1,
-                              ),
-                            );
-                    if (response) {
-                      'Item has been added to cart'.showAsSuccessToast(context);
-                    }
-                    CartDetailRoute(id: widget.id).go(context);
+                    ref.read(cartVMProvider.notifier).addToCart(
+                          cart: CartModel(
+                            id: product?.id ?? 0,
+                            product: product!,
+                            quantity: 1,
+                          ),
+                        );
+                    'Item has been added to cart'.showAsSuccessToast(context);
                   }
                 },
                 label: AppString.addToCart,

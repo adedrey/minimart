@@ -25,41 +25,39 @@ class ProductTile extends StatelessWidget {
       enabled: isLoading,
       child: TouchableOpacity(
         onTap: action,
-        child: SizedBox(
-          height: 229.h,
-          child: Column(
-            spacing: 5.h,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Skeleton.leaf(
-                child: Container(
-                  width: 162.h,
-                  height: 162.h,
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(9.r)),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(9.r),
-                    child: CustomImage(imageUrl: product.image),
-                  ),
+        constraints: BoxConstraints(maxWidth: 162.h, maxHeight: 238.h),
+        child: Column(
+          spacing: 5.h,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Skeleton.leaf(
+              child: Container(
+                width: 162.h,
+                height: 162.h,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(9.r)),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(9.r),
+                  child: CustomImage(imageUrl: product.image),
                 ),
               ),
-              Skeleton.leaf(
-                child: Text(
-                  product.title,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textStylesTheme.displaySmall,
-                ),
+            ),
+            Skeleton.leaf(
+              child: Text(
+                product.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textStylesTheme.displaySmall,
               ),
-              Skeleton.leaf(
-                child: Text(
-                  AppFormatter.money(product.amount),
-                  style: theme.textStylesTheme.displayLarge,
-                ),
+            ),
+            Skeleton.leaf(
+              child: Text(
+                AppFormatter.money(product.amount),
+                style: theme.textStylesTheme.displayLarge,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

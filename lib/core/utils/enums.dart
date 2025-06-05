@@ -3,10 +3,6 @@ import 'package:minimart/core/utils/theme/theme.dart' show AppColors;
 
 enum ImageType { svg, png, jpg, jpeg, gif, webp, unknown }
 
-enum LoadingState { initial, loading, fetchingMore }
-
-enum DataState { empty, loaded, fetchedAll }
-
 enum ToastStyle {
   success(
     bgColor: AppColors.kColorSuccess500,

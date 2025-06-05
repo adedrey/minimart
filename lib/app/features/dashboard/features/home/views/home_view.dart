@@ -51,7 +51,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
               title: 'Technology',
               action: () {},
             ),
-            Expanded(
+            Flexible(
               child: RefreshIndicator(
                 onRefresh: () =>
                     ref.read(homeVMProvider.notifier).fetchProducts(),
@@ -63,7 +63,10 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       : ref.watch(productVMProvider).isEmpty
                           ? Container()
                           : HomeProducts(
-                              products: ref.watch(productVMProvider),
+                              products: ref
+                                  .watch(productVMProvider)
+                                  .reversed
+                                  .toList(),
                             ),
                 ),
               ),

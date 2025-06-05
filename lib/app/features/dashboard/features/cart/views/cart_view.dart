@@ -25,7 +25,8 @@ class _CartViewState extends ConsumerState<CartView> {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        minimum: WidgetHelper.safeArea(),
+        minimum: WidgetHelper.safeArea()
+            .copyWith(top: ScreenUtil().statusBarHeight + 10.h),
         child: Column(
           children: [
             const CustomAppBar(

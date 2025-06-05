@@ -52,29 +52,26 @@ class _DashboardViewState extends ConsumerState<DashboardView>
     final currentIndex = _getCurrentIndex(context);
     final theme = Theme.of(context).appTheme;
     return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: LazyIndexedStack(
-          index: currentIndex,
-          children: [
-            FadeTransition(
-              opacity: _opacityAnimation,
-              child: const HomeView(),
-            ),
-            FadeTransition(
-              opacity: _opacityAnimation,
-              child: const CartView(),
-            ),
-            FadeTransition(
-              opacity: _opacityAnimation,
-              child: const FavoritesView(),
-            ),
-            FadeTransition(
-              opacity: _opacityAnimation,
-              child: const ProfileView(),
-            ),
-          ],
-        ),
+      body: LazyIndexedStack(
+        index: currentIndex,
+        children: [
+          FadeTransition(
+            opacity: _opacityAnimation,
+            child: const HomeView(),
+          ),
+          FadeTransition(
+            opacity: _opacityAnimation,
+            child: const CartView(),
+          ),
+          FadeTransition(
+            opacity: _opacityAnimation,
+            child: const FavoritesView(),
+          ),
+          FadeTransition(
+            opacity: _opacityAnimation,
+            child: const ProfileView(),
+          ),
+        ],
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(
