@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:minimart/app/features/dashboard/features/home/widgets/home_products.dart';
+import 'package:minimart/core/utils/utils.dart';
 import 'package:minimart/core/widgets/customs/custom_appbar.dart';
 import 'package:minimart/core/widgets/customs/custom_back_button.dart';
 
@@ -24,6 +27,15 @@ class _HomeViewState extends ConsumerState<HomeView> {
               showInput: true,
             ),
             const CustomBackButton(),
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 16.h),
+                child: HomeProducts(
+                  products: Constants.products,
+                ),
+              ),
+            ),
           ],
         ),
       ),
