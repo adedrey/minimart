@@ -34,6 +34,8 @@ $ flutter run --flavor production --target lib/main_production.dart
 ```
 
 ### Folder Structure
+
+```
 assets/
 │   ├── fonts/
 │   └── images/
@@ -91,7 +93,7 @@ lib/
 │           ├── common/
 │           ├── customs/
 │           ├── shimmers/
-
+```
 ### What was used
 
 - State management - Riverpod
