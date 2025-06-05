@@ -12,7 +12,7 @@ Follow these steps to set up and run the project locally.
 
 ```sh
 # Copy to your machine
-$ git clone <your-repo-url>
+$ git clone git@github.com:adedrey/minimart.git
 $ cd minimart
 
 # Install Dependencies
